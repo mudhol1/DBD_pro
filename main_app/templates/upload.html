@@ -1,0 +1,24 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+
+{% block page_title %}Student Enrollment Form{% endblock page_title %}
+
+{% block content %}
+
+
+<form method="POST" enctype="multipart/form-data"  >
+    {% csrf_token %}
+    <h2 class="h4">Upload Resource File</h2>
+        </label>
+        <br>
+        <div class="btn btn-primary"><input type="file" name="myfile"></div>
+        
+        <br>
+        <br>
+    <div class="btn btn-primary"><button type="submit">Upload</button></div>    
+</form>
+
+
+
+
+{% endblock content %}

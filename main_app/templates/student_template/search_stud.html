@@ -1,0 +1,49 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block page_title %}Student Performed Experiments{% endblock page_title %}
+
+{% block content %}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">{{page_title}}</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Serial No</th>
+                                    <th>Name</th>
+                                   
+                                    <th>exp_no</th>
+                                  
+                                    <th>Scored marks</th>
+                                    <th>Max marks</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for m in exp %}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{m.student.admin.first_name}}</td>
+                                    
+                                    <td>{{m.exp_no}}</td>
+                                    <td>{{m.secured_marks}}</td>
+                                    <td>{{m.max_marks}}</td>
+                                    
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

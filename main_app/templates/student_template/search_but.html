@@ -1,0 +1,92 @@
+
+{% extends 'main_app/base.html' %}
+{% load static %}
+
+{% block page_title %}Search{% endblock page_title %}
+
+{% block content %}
+
+  <div id="primary" class="content-area">
+      <main id="main" class="site-main">
+          <div class="main-news-list">
+              <div class="container">
+                  <!-- Start: Search Section -->
+                  <section class="search-filters">
+                      <div class="filter-box">
+                        <h5>          Enter the student Name ,subject to search      </h5>
+                          <form action="{%  url 'search_stud'  %}" method="POST" id="search-form">
+                            {% csrf_token %}
+                              <div class="col-md-10">
+                                  <div class="row">
+                                      <div class="col-md-4 col-sm-6">
+                                          <div class="form-group">
+                                              <label class="sr-only" for="keywords">Search by Student Name</label>
+                                              <input class="form-control" placeholder="Search by Name"  name="q" type="text" >
+                                              
+                                          </div>
+                                      </div>
+                                      
+                                      <div class="col-md-4 col-sm-6">
+                                        <div class="form-group">
+                                            <label class="sr-only" for="keywords">Search by Subject</label>
+                                            <input class="form-control" placeholder="Search by subject" name="p" type="text">
+                                        </div>
+                                      </div>
+                                     
+                                      
+                                  </div>
+                              </div>
+                              <div class="col-md-2">
+                                  <div class="row">
+                                      <div class="col-md-12 col-sm-6">
+                                          <div class="form-group">
+                                              <input class="form-control btn-clearform" type="submit" value="Clear">
+                                          </div>
+                                      </div>
+                                      <div class="col-md-12 col-sm-6">
+                                          <div class="form-group">
+                                              <input class="form-control" type="submit" value="Search">
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </form>
+                      </div>
+
+
+                      <h5>     Enter Date to search attended Students      </h5>
+                      <form action="{%  url 'search_atd'  %}" method="POST">
+                        {% csrf_token %}
+                          <div class="col-md-10">
+                              <div class="row">
+                                  <div class="col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                          <label class="sr-only" for="keywords">Search by Dates</label>
+                                          <input class="form-control" placeholder="Search by Dates"  name="a" type="text">
+                                      </div>
+                                  </div>
+
+
+      
+                                </div>
+                              </div>
+                              <div class="col-md-2">
+                                  <div class="row">
+                                      <div class="col-md-12 col-sm-6">
+                                          <div class="form-group">
+                                              <input class="form-control btn-clearform" type="submit" value="Clear">
+                                          </div>
+                                      </div>
+                                      <div class="col-md-12 col-sm-6">
+                                          <div class="form-group">
+                                              <input class="form-control" type="submit" value="Search">
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </form>
+                      </div>
+                     
+</body>
+</html>
+{% endblock content %}
